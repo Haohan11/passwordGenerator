@@ -1,0 +1,249 @@
+:root {
+    --main-color-h: 120deg;
+    --main-color-s: 25%;
+    --main-color-l: 65%;
+    --main-color: hsl(
+      var(--main-color-h) var(--main-color-s) var(--main-color-l)
+    );
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .red {
+    color: red;
+  }
+  
+  .gray {
+    color: gray;
+  }
+  
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+  
+  input:focus, input:focus-visible {
+    outline: none;
+  }
+  
+  input, input::-webkit-slider-thumb, input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    appearance: none;
+  }
+  
+  div {
+    user-select: none;
+  }
+  
+  .container {
+    justify-content: space-between;
+    padding: 2.5rem;
+    box-shadow: 0 0 3px hsl(0deg 0% 50%);
+    border-radius: 5px;
+    min-height: 600px;
+    max-width: 500px;
+    min-width: 300px;
+    width: 80%;
+  }
+  
+  .title {
+    width: 100%;
+    padding-bottom: .75rem;
+    align-self: center;
+    text-align: center;
+    color: var(--main-color);
+    border-bottom: 3px dashed var(--main-color);
+  }
+  
+  fieldset {
+    border: none;
+    padding: 0 .5rem;
+  }
+  
+  #passwordLength {
+    margin-left: 1rem;
+    padding-top: .1rem;
+    border: 2px solid hsl(0deg 0% 75%);
+    border-radius: 5px;
+    width: 3rem;
+    font-size: 1rem;
+    text-align: center;
+  }
+  
+  #passwordLength:focus {
+    border: 2px solid var(--main-color);
+    outline: 1px solid var(--main-color);
+  }
+  
+  .center {
+    align-self: center;
+  }
+  
+  .font-large {
+    font-size: 2rem;
+  }
+  
+  .font-medium {
+    font-size: 1.5rem;
+  }
+  
+  .password {
+    border: 2px solid hsl(0deg 0% 75%);
+    border-radius: 5px;
+    padding: 0 .5rem;
+    width: 80%;
+    height: 2rem;
+    align-self: center;
+    font-size: 1rem;
+  }
+  
+  .password:focus {
+    border: 2px solid var(--main-color);
+    outline: 1px solid var(--main-color);
+  }
+  
+  .button {
+    align-self: center;
+    height: 2rem;
+    width: 100%;
+    border: 0;
+    color: white;
+    background-color: var(--main-color);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .2s background-color ease-in-out,
+                .1s transform ;
+  }
+  
+  .button:active {
+    transform: translateY(2px);
+  }
+  
+  .small-button {
+    width: 6rem;
+    margin-left: .5rem;
+  }
+  
+  .button:hover {
+    background-color: hsl(
+      var(--main-color-h) var(--main-color-s) calc(var(--main-color-l) - 15%)
+    );
+  }
+  
+  .button:focus-visible {
+    outline: none;
+    background-color: hsl(
+      var(--main-color-h) var(--main-color-s) calc(var(--main-color-l) - 15%)
+    );
+  }
+  
+  .option {
+    margin: 1rem 0 0 0;
+    font-size: 1.2rem;
+    color: var(--main-color);
+    font-weight: bold;
+  }
+  
+  .option:first-child {
+    margin: .3rem 0 0;
+  }
+  
+  .pointer {
+    cursor: pointer;
+  }
+  
+  input[type="range"] {
+    width: 100%;
+    height: 10px;
+    margin: 1rem 0 0;
+    border-radius: 3px;
+    background-color: hsl(0deg 0% 80%);
+  }
+  
+  input[type="range"]::-webkit-slider-thumb {
+    height: 16px;
+    width: 16px;
+    border-radius: 3px;
+    background-color: var(--main-color);
+    transition: .2s ease-in-out;
+  }
+  
+  input[type="range"]::-webkit-slider-thumb:hover {
+    background-color: hsl(
+      var(--main-color-h) var(--main-color-s) calc(var(--main-color-l) - 15%)
+    );
+  }
+  
+  input[type="range"]:focus-visible {
+    border: 2px solid var(--main-color);
+    outline: 1px solid var(--main-color);
+  }
+  
+  input[type="checkbox"] {
+    position: relative;
+    margin: .1rem 0 0 .5rem;
+    height: 16px;
+    width: 16px;
+    border: 2px solid hsl(0deg 0% 75%);
+    border-radius: 3px;
+    cursor: pointer;
+    transition: .2s;
+  }
+  
+  input[type="checkbox"]:hover {
+    background-color: hsl(0deg 0% 90%);
+  }
+  
+  input[type="checkbox"]::after {
+    content: "";
+    display: none;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    height: 8px;
+    width: 8px;
+    border-radius: 1px;
+    background-color: var(--main-color);
+  }
+  
+  input[type="checkbox"]:checked::after{
+    display: block;
+  }
+  
+  input[type="checkbox"]:focus-visible {
+    border: 2px solid var(--main-color);
+    outline: 1px solid var(--main-color);
+    outline-offset: 0px;
+  }
+  
+  .column-direction {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .row-direction {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  @media (max-width: 500px) {
+    
+    .container {
+      padding: 1.5rem;
+    }
+    
+    .option {
+      font-size: 1rem;
+    }
+    
+    .password {
+      width: 100%;
+    }
+  
+  }

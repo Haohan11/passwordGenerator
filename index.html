@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <script defer src="passwordGenerator.js"></script>
+    <title>Password Generator</title>
+</head>
+<body>
+    <div class="container column-direction">
+        <h2 class="title font-large">Password Generator</h2>
+        <fieldset class="column-direction">
+        <div class="option">
+            <div class="row-direction">
+            <label>Password Length </label>
+            <input type="number" value="16" id="passwordLength">
+            </div>
+            <input id="passwordSlider" class="pointer" type="range" min="4" max="128" step="1">
+        </div>
+        <div class="option row-direction">
+            <label for="includeSymbols" class="pointer">Include Symbols</label>
+            <input type="checkbox" id="includeSymbols">
+        </div>
+        <div class="option row-direction">
+            <label for="includeNumber" class="pointer">Include Number</label>
+            <input type="checkbox" id="includeNumber" checked="true">
+        </div>
+        <div class="option row-direction">
+            <label for="includeLowercase" class="pointer">Include Lowercase Characters</label>
+            <input type="checkbox" id="includeLowercase" checked="true">
+        </div>
+        <div class="option row-direction">
+            <label for="includeUppercase" class="pointer">Include Uppercase Characters</label>
+            <input type="checkbox" id="includeUppercase" checked="true">
+        </div>
+        <div class="option row-direction">
+            <label for="useAPI" class="pointer">Generate Through Internet <small>(Not always succeed)</small></label>
+            <input type="checkbox" id="useAPI">
+        </div>
+        </fieldset>
+        <button class="button" id="generateButton">GENERATE</button>
+        <h2 class="title font-medium">Your Password</h2>
+        <div class="row-direction">
+        <input type="text" class="password" id="passwordOutput">
+        <button class="button small-button" id="copyButton">Copy</button>
+        </div>
+    </div>
+</body>
+</html>
